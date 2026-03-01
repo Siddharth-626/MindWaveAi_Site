@@ -20,7 +20,7 @@ export const contactSchema = z.object({
     .refine(
       (val) =>
         !val ||
-        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(val),
+        /^\+?[\d\s\-().]{7,20}$/.test(val),
       "Please enter a valid phone number"
     ),
   service: z.enum(
@@ -42,7 +42,7 @@ export const contactSchema = z.object({
     .string()
     .min(20, "Message must be at least 20 characters")
     .max(2000, "Message is too long"),
-  honeypot: z.string().max(0, "Bot detected").optional(),
+  honeypot: z.string().optional(),
 });
 
 export type ContactFormValues = z.infer<typeof contactSchema>;

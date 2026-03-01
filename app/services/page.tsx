@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/FadeIn";
+import { FadeIn } from "@/components/animations/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -155,9 +155,7 @@ export default function ServicesPage() {
               <div key={service.id} id={service.id}>
               <FadeIn>
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start ${
-                    index % 2 === 1 ? "lg:direction-rtl" : ""
-                  }`}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
                 >
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                     <div className="text-4xl mb-4">{service.icon}</div>

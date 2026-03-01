@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 

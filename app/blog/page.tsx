@@ -82,8 +82,6 @@ const blogPosts = [
   },
 ];
 
-const categories = ["All", "Strategy", "AI Chatbots", "Tools & Platforms", "CRM & Sales", "E-Commerce", "Engineering"];
-
 const categoryColors: Record<string, string> = {
   Strategy: "#EFF6FF",
   "AI Chatbots": "#F0FDF4",

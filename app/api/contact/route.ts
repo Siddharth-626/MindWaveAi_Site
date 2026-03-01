@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Execute all async operations concurrently
-    const [dbResult, emailResult, webhookResult] = await Promise.allSettled([
+    const [dbResult, confirmEmailResult, adminEmailResult, webhookResult] = await Promise.allSettled([
       tryInsertContact(contactData),
       sendContactConfirmation({
         name: contactData.name,
@@ -97,12 +97,15 @@ export async function POST(request: NextRequest) {
       triggerCRMWebhook(contactData),
     ]);
 
-    // Log any non-critical failures
+    // Log any non-critical failures without blocking the success response
     if (dbResult.status === "rejected") {
       console.error("DB insert failed:", dbResult.reason);
     }
-    if (emailResult.status === "rejected") {
-      console.error("Email send failed:", emailResult.reason);
+    if (confirmEmailResult.status === "rejected") {
+      console.error("Confirmation email failed:", confirmEmailResult.reason);
+    }
+    if (adminEmailResult.status === "rejected") {
+      console.error("Admin notification failed:", adminEmailResult.reason);
     }
     if (webhookResult.status === "rejected") {
       console.error("CRM webhook failed:", webhookResult.reason);

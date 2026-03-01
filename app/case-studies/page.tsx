@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { CTA } from "@/components/sections/CTA";
 import { ArrowRight } from "lucide-react";

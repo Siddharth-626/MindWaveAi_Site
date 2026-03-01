@@ -28,10 +28,6 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    setIsMobileOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     if (isMobileOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -132,6 +128,7 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={() => setIsMobileOpen(false)}
                     className={cn(
                       "px-4 py-3 text-base font-medium rounded-xl transition-all",
                       pathname === link.href

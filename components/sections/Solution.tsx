@@ -1,6 +1,6 @@
 "use client";
 
-import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations/FadeIn";
+import { FadeIn } from "@/components/animations/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Zap, RefreshCw, Shield, TrendingUp } from "lucide-react";
@@ -51,7 +51,7 @@ export function Solution() {
               <span className="text-gradient">24 hours a day</span>
             </h2>
             <p className="text-[#475569] text-lg leading-relaxed mb-8">
-              We design, build, and deploy custom automation workflows that connect your tools, eliminate manual steps, and create a business that runs with precision — whether you're online or not.
+              We design, build, and deploy custom automation workflows that connect your tools, eliminate manual steps, and create a business that runs with precision — whether you&apos;re online or not.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
